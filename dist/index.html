@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./fevicon.ico" type="image/x-icon" />
+    <title>Todo App</title>
+  </head>
+  <body class="relative">
+    <nav
+      class="flex justify-between items-center pl-4 pt-2 md:pl-8 md:pt-3 md:pb-3 xl:pl-24 xl:pr-24 border-b-1 bg-white border-b-slate-300 shadow top-0 md:pr-10"
+    >
+      <div class="flex items-center gap-6">
+        <div id="menu" class="block lg:hidden md:hidden">
+          <div class="h-0.5 bg-neutral-800 w-5 mb-1 rounded-sm"></div>
+          <div class="h-0.5 bg-neutral-800 w-5 mb-1 rounded-sm"></div>
+          <div class="h-0.5 bg-neutral-800 w-5 rounded-sm"></div>
+        </div>
+        <div class="flex gap-0.5">
+          <img class="w-8" src="./logos/logo.png" alt="logo" />
+          <span class="text-2xl text-blue-500 font-medium">Todos</span>
+        </div>
+      </div>
+      <div
+        class="bg-blue-50 hidden lg:flex lg:shadow-sm lg:gap-3 lg:rounded-2xl lg:pl-3 lg:pr-3 lg:pt-2 lg:pb-2"
+      >
+        <img src="./logos/glass.png" alt="search icon" />
+        <input
+          class="lg:outline-0 lg:bg-transparent lg:border-0 lg:text-gray-800"
+          placeholder="search"
+          type="text"
+        />
+      </div>
+    </nav>
+    <main class="">
+      <div
+        class="md:grid md:grid-cols-12 md:grid-rows-12 md:h-screen md:items-center md:pr-8"
+      >
+        <div
+          id="menuBar"
+          class="absolute transition duration-300 md:col-span-4 md:row-span-12 ease-in-out transition-discrete h-screen w-50 -translate-x-full md:translate-x-0 md:static md:block md:text-sm md:border-r md:border-gray-300"
+        >
+          <div class="flex flex-col gap-5 bg-white md:pt-20 items-center">
+            <span class="cursor-pointer md:hover:text-gray-400" id="allTodos"
+              ><a href="/">Home</a></span
+            >
+            <span class="cursor-pointer md:hover:text-gray-400" id="today"
+              >Today</span
+            >
+            <span class="cursor-pointer md:hover:text-gray-400" id="upcoming"
+              >Upcoming</span
+            >
+            <span class="cursor-pointer md:hover:text-gray-400" id="overdue"
+              >Overdue</span
+            >
+            <span class="cursor-pointer md:hover:text-gray-400" id="completed"
+              >Completed</span
+            >
+          </div>
+        </div>
+        <div class="md:col-span-8 md:row-span-5">
+          <div
+            class="flex flex-col justify-center items-center mt-6 md:mt-0 md:pt-0 gap-6"
+            action="/"
+          >
+            <form class="flex flex-col gap-4">
+              <input
+                class="bg-blue-50 outline-0 p-2 md:w-80 w-70 border border-blue-200 rounded-2xl text-center"
+                placeholder="Enter Todo"
+                type="text"
+                name="inpt"
+                id="todoInput"
+              />
+
+              <input
+                class="bg-blue-50 cursor-pointer p-2 rounded-2xl border border-blue-200 text-gray-500"
+                type="date"
+                id="deadline"
+              />
+            </form>
+            <button
+              id="AddBtn"
+              class="bg-blue-500 p-2 w-35 text-white font-bold rounded-2xl cursor-pointer"
+            >
+              Add Todo
+            </button>
+          </div>
+
+          <hr class="mt-6 ml-4 mr-4 border-gray-300" />
+        </div>
+        <div
+          id="todoHolder"
+          class="overflow-y-scroll max-h-110 p-6 md:col-span-8 md:row-span-5"
+        ></div>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
